@@ -77,6 +77,7 @@ def main():
     sct_doc = etree.parse(f)
     schematron = isoschematron.Schematron(sct_doc, store_report = True)
 
+
     # XML to validate
     notValid = io.StringIO('''\
 	<mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -91,6 +92,7 @@ def main():
 	    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd">
          </mets:mets>
         ''')
+
     # Parse xml
     doc = etree.parse(notValid)
 
