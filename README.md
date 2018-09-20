@@ -111,5 +111,6 @@ Finally run the validator application:
 (venv) $ python mets-validator/MetsValidator.py
 ````
 There's a script that you can use for this in the project root, `run.sh`. 
+Or to run unit tests `runMetsValidatorTests.sh`
 
 This code is released under the GPLv3 license. 
