@@ -1,0 +1,4 @@
+*.pyc
+metsvalidator/__pycache__/*.pyc
+
+
