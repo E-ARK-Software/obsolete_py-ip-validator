@@ -1,0 +1,19 @@
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">
+    <ns prefix="csip" uri="DILCIS"/>
+    <ns prefix="ead" uri="urn:isbn:1-931666-22-9"/>
+    <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
+    <pattern id="METS_root_element_validation">
+        <title>Validate METS root element.</title>
+        <rule id="CSIP3-TYPE-existence" context="mets:mets">
+            <assert test="@TYPE">General content type attribute does not exist.</assert>
+        </rule>
+        <rule id="CSIP4-CONTENTTYPESPECIFICATION-existence" context="mets:mets">
+            <assert test="@csip:CONTENTTYPESPECIFICATION">Content information type attribute does not exist.</assert>
+        </rule>
+    </pattern>
+    <pattern id="METS_root_element_value_validation">
+        <rule id="CSIP4-CONTENTTYPESPECIFICATION-value" context="mets:mets">
+            <assert test="(contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFERMS') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFSFSB') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD1') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD2') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARDDK') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoVectorGML') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoRasterGeotiff') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'MIXED') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'OTHER'))">Content information type attribute value is not known. Known values are: SMURFERMS, SMURFSFSB, SIARD1, SIARD2, SIARDDK, GeoVectorGML, GeoRasterGeotiff, MIXED, OTHER.</assert>
+        </rule>
+    </pattern>
+</schema>

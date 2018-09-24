@@ -47,8 +47,42 @@ import io
 from lxml import isoschematron
 from lxml import etree
 
-def load_rules():
-    print ('Loading rules from XML file...')
+#def load_rules(filename):
+#    print ('Loading rules from XML file:')
+#    validator_rules_file = open("metsvalidator/mets_validator.xml","r")
+#    validator_rules = validator_rules_file.read()
+#    validator_rules_file.close()
+    #print ('METS validation rules: ', validator_rules)
+#    return validator_rules
+
+def load_xml(filename):
+    print ('Loading XML file:', filename)
+    xml_file = open(filename,"r")
+    xml_content = xml_file.read()
+    xml_file.close()
+    return xml_content
+
+def validate(rules, sample_file):
+    f = io.StringIO(rules)
+    
+    # Parse schema
+    sct_doc = etree.parse(f)
+    schematron = isoschematron.Schematron(sct_doc, store_report = True)
+
+    # XML to validate
+    sample = load_xml(sample_file)
+    isValid = io.StringIO(sample)
+
+    # Parse xml
+    doc = etree.parse(isValid)
+
+    # Validate against schema
+    validationResult = schematron.validate(doc)
+
+    # Validation report
+    report = schematron.validation_report
+
+    return validationResult, report
 
 def main():
 
