@@ -113,4 +113,6 @@ Finally run the validator application:
 There's a script that you can use for this in the project root, `run.sh`. 
 Or to run unit tests `runMetsValidatorTests.sh`
 
+For testing adjust XML samples stored in files if necessary.
+
 This code is released under the GPLv3 license. 
