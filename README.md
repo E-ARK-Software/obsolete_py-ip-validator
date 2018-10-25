@@ -5,7 +5,7 @@ Python IP Validator Prototype
 ==============================
 A prototype for the METS data validation. This prototype implements the structure validation defined by the following rules (CSIP1 to CSIP17):
  
-https://github.com/DILCISBoard/E-ARK-CSIP/blob/master/implementation/index.md#41folder-structure-of-the-cs-ip
+https://carlwilson.github.io/E-ARK-CSIP/specification/implementation/metadata/#531-use-of-the-mets-root-element-element-mets
 
 The implementation requirements of the CS IP Information Package structure are:
 
