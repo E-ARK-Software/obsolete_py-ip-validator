@@ -44,5 +44,29 @@
             <assert test="name()='mets:metsHdr'">Element for describing the package itself.</assert>
         </rule>
     </pattern>
-
+    <pattern id="METS_header_element_package_creation_date_validation">
+        <rule id="CSIP9-CREATEDATE-existence" context="mets:metsHdr">
+            <assert test="@CREATEDATE">Mandatory, the date of creation of the package.</assert>
+        </rule>
+    </pattern>
+    <pattern id="METS_header_element_package_last_modification_date_validation">
+        <rule id="CSIP10-LASTMODDATE-existence" context="mets:metsHdr">
+            <assert test="@LASTMODDATE">Mandatory if relevant (in case the package has been modified).</assert>
+        </rule>
+    </pattern>
+    <pattern id="METS_header_element_csip_type_validation">
+        <rule id="CSIP11-OAISPACKAGETYPE-existence" context="mets:metsHdr">
+            <assert test="@csip:OAISPACKAGETYPE">An attribute added by the CS IP for describing the type of the IP.</assert>
+        </rule>
+    </pattern>
+    <pattern id="METS_header_element_csip_type_value_validation">
+        <rule id="CSIP11-OAISPACKAGETYPE" context="mets:metsHdr">
+            <assert test="(contains(string(@csip:OAISPACKAGETYPE), 'SIP') or contains(string(@csip:OAISPACKAGETYPE), 'AIP') or contains(string(@csip:OAISPACKAGETYPE), 'DIP') or contains(string(@csip:OAISPACKAGETYPE), 'AIU') or contains(string(@csip:OAISPACKAGETYPE), 'AIC'))">An attribute added by the CS IP for describing the type of the IP. The vocabulary to be used contains values: SIP, AIP, DIP, AIU, AIC. The vocabulary is managed by the DILCIS Board and will be updated when required.</assert>
+        </rule>
+    </pattern>    
+    <pattern id="METS_header_agent_validation">
+        <rule id="CSIP12-agent-existence" context="mets:agent">
+            <assert test="name()='mets:agent'">The metsHdr must include at least one agent describing the software which has been used to create the package (ROLE=”CREATOR” TYPE=”OTHER” OTHERTYPE=”SOFTWARE”). The use of this element for describing additional agents is optional and nor restricted or recommended by this specification.</assert>
+        </rule>
+    </pattern>
 </schema>
