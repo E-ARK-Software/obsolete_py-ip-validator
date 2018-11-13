@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 source ./venv/bin/activate
-python -m unittest discover .
+python -m unittest discover test
