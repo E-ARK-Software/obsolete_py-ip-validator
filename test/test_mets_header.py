@@ -32,3 +32,27 @@ class MetsHeaderTestCase(Base):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_agent_element_not_exists.xml")
         self.assertTrue(validationResult==True)
 
+    def test_csip13_check_header_agent_role_element(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_element_agent_role_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip15_check_header_agent_type_element(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_element_agent_type_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip16_check_header_agent_other_type_element(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_element_agent_othertype_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip17_check_header_agent_name_element(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_element_agent_name_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip18_check_header_agent_note_element(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_element_agent_note_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip19_check_header_agent_note_type_element(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_element_agent_note_type_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
