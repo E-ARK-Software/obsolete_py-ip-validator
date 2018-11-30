@@ -1,4 +1,7 @@
 *.pyc
 metsvalidator/__pycache__/*.pyc
-
+Pipfile
+Pipfile.lock
+history-eark.txt
+sw/*
 
