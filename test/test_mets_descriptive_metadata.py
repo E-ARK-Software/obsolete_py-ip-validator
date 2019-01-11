@@ -34,3 +34,18 @@ class MetsDescriptiveMetadataTestCase(Base):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_element_reference_not_exists.xml")
         self.assertTrue(validationResult==True)
 
+    # location group
+
+    def test_csip26_check_descriptive_metadata_location_type(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_location_location_type_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip27_check_descriptive_metadata_location_type_value_url(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_location_location_type_value_not_url.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip28_check_descriptive_metadata_location_xlink_type(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_location_xlink_type_not_exists.xml")
+        self.assertTrue(validationResult==True)
+
+

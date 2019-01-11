@@ -71,4 +71,23 @@ NOTE: According to official METS documentation each metadata section must descri
 In each occurrence of the dmdSec exactly one occurrence of the mdRef element must be present.</assert>
         </rule>
     </pattern>
+
+    <pattern id="METS_descriptive_metadata_element_location_locator_type_validation">
+        <rule id="CSIP26-locator-type-existence" context="mets:mdRef">
+            <assert test="@xlink:href">Specifies the locator type used in the @xlink:href attribute which points to the file. The @LOCTYPE attribute is mandatory in the CS IP</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_element_location_locator_type_value_url_validation">
+        <rule id="CSIP27-locator-type-value-is-url-check" context="mets:mdRef">
+            <assert test="contains(string(@LOCTYPE), 'URL')">Within the CS IP the value of @LOCTYPE attribute must be “URL”.</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_element_location_xlink_type_validation">
+        <rule id="CSIP28-locator-xlink-type-existence" context="mets:mdRef">
+            <assert test="@xlink:type">The type of the link. The @xlink:type attribute is mandatory in the CS IP</assert>
+        </rule>
+    </pattern>
+
 </schema>

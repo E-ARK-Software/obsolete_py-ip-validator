@@ -4,4 +4,7 @@ Pipfile
 Pipfile.lock
 history-eark.txt
 sw/*
+venv/*
+venv/bin/*
+
 
