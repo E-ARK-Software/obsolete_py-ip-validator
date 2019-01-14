@@ -48,4 +48,36 @@ class MetsDescriptiveMetadataTestCase(Base):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_location_xlink_type_not_exists.xml")
         self.assertTrue(validationResult==True)
 
+    def test_csip29_check_descriptive_metadata_location_xlink_type_value(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_location_xlink_type_value_not_simple.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip30_check_descriptive_metadata_location_xlink_href_validation(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_location_xlink_href_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip31_check_descriptive_metadata_mdtype_validation(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_mdtype_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip32_check_descriptive_metadata_core_mimetype_validation(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_core_mimetype_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip33_check_descriptive_metadata_core_size_validation(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_core_size_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip34_check_descriptive_metadata_core_created_validation(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_core_created_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip35_check_descriptive_metadata_core_checksum_validation(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_core_checksum_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip36_check_descriptive_metadata_core_checksumtype_validation(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_core_checksumtype_validation.xml")
+        self.assertTrue(validationResult==True)
+
 

@@ -90,4 +90,52 @@ In each occurrence of the dmdSec exactly one occurrence of the mdRef element mus
         </rule>
     </pattern>
 
+    <pattern id="METS_descriptive_metadata_element_location_xlink_type_value_validation">
+        <rule id="CSIP29-xlink-type-value-is-simple-check" context="mets:mdRef">
+            <assert test="contains(string(@xlink:type), 'simple')">The CS IP requires the use of @xlink:type attribute with the fixed value “simple”</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_element_location_xlink_href_validation">
+        <rule id="CSIP30-locator-xlink-href-existence" context="mets:mdRef">
+            <assert test="@xlink:href">The actual location of the resource. This specification requires the recording of an URL type filepath within this attribute. Further, the filepath must be decoded consistently throughout all mdRef elements within the information package, and follow the requirements for referencing as described in Section 5.2.</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_element_mdtype_validation">
+        <rule id="CSIP31-mdtype-existence" context="mets:mdRef">
+            <assert test="@MDTYPE">Specifies the type of metadata in the linked file. Values should be taken from the METS list provided.</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_core_mimetype_validation">
+        <rule id="CSIP32-core-mimetype-existence" context="mets:mdRef">
+            <assert test="@MIMETYPE">The IANA media type for the external file, mandatory in CS IP</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_core_size_validation">
+        <rule id="CSIP33-core-size-existence" context="mets:mdRef">
+            <assert test="@SIZE">Size of linked file in bytes, mandatory in CS IP</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_core_created_validation">
+        <rule id="CSIP34-core-created-existence" context="mets:mdRef">
+            <assert test="@CREATED">Date the linked file was created, mandatory in CS IP</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_core_checksum_validation">
+        <rule id="CSIP35-core-checksum-existence" context="mets:mdRef">
+            <assert test="@CHECKSUM">The checksum of the linked file, mandatory in CS IP</assert>
+        </rule>
+    </pattern>
+
+    <pattern id="METS_descriptive_metadata_core_checksumtype_validation">
+        <rule id="CSIP36-core-checksumtype-existence" context="mets:mdRef">
+            <assert test="@CHECKSUMTYPE">The type of checksum used for calculating the checksum of the linked file, mandatory in CS IP</assert>
+        </rule>
+    </pattern>
+
 </schema>
