@@ -25,5 +25,27 @@
             <assert test="name()='mets:amdSec'">If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element. It is possible to transfer metadata in a package using just the descriptive metadata sectiond/or adminstrative metadata section.</assert>
         </rule>
     </pattern>
-
+    <pattern id="METS_administrative_metadata_premis_element_digiprovmd_validation">
+        <rule id="CSIP32-digiprovMD-validation" context="mets:amdSec">
+            <assert test="name()='amdSec:digiprovMD'">For recording information about preservation events the standard PREMIS is used. The PREMIS metadata must be either embedded or linked in a digital provenance metadata (digiprovMD) element. It is mandatory to include one digiprovMD element for each external PREMIS file placed in the “metadata/preservation” section, or for each embedded set of PREMIS metadata.</assert>
+        </rule>
+    </pattern>
+    <pattern id="METS_administrative_metadata_premis_element_digiprovmd_id_validation">
+        <title>Validate METS administrative element digital provenance metadata identfier.</title>
+        <rule id="CSIP33-digiprovMD-id-validation" context="amdSec:digiprovMD">
+            <assert test="@ID">An identifier for the digital provenance metadata section (digiprovMD) used for referencing inside the package. It must be unique within the package. The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata"</assert>
+        </rule>
+    </pattern>
+    <pattern id="METS_administrative_metadata_premis_element_digiprovmd_status_validation">
+        <title>Validate METS administrative element digital provenance metadata status.</title>
+        <rule id="CSIP34-digiprovMD-status-validation" context="amdSec:digiprovMD">
+            <assert test="(contains(string(@STATUS), 'SUPERSEDED') or contains(string(@STATUS), 'CURRENT') and count(@STATUS)>0">Status of the metadata. Used to indicate the currency of the package. If used the two values "SUPERSEDED" or "CURRENT" from the vocabulary is used.</assert>
+        </rule>
+    </pattern>
+    <pattern id="METS_administrative_metadata_premis_element_mdref_validation">
+        <title>Validate METS administrative element reference to the document with the digital provenance metdata amdSec/digiprovMD/mdRef</title>
+        <rule id="CSIP35-mdRef-validation" context="mets:amdSec">
+            <assert test="name()='amdSec:mdRef' and count(amdSec:mdRef)>0">Reference to the digital provenance metadata file stored in the "metadata" section of the IP.</assert>
+        </rule>
+    </pattern>
 </schema>
