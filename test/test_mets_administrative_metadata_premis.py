@@ -26,6 +26,46 @@ class MetsAdministrativeMetadataPremisTestCase(Base):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element_digiprovmd_status_validation.xml")
         self.assertTrue(validationResult==True)
 
+    def test_csip35_check_administrative_metadata_premis_element_mdref(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip36_check_administrative_metadata_premis_element_mdref_loctype(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_loctype_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip37_check_administrative_metadata_premis_element_mdref_xlink_type(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_xlink_type_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip38_check_administrative_metadata_premis_element_mdref_xlink_href(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_xlink_href_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip39_check_administrative_metadata_premis_element_mdref_mdtype(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_mdtype_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip40_check_administrative_metadata_premis_element_mdref_mimetype(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_mimetype_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip41_check_administrative_metadata_premis_element_mdref_file_size(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_file_size_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip42_check_administrative_metadata_premis_element_mdref_file_creation_date(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_created_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip43_check_administrative_metadata_premis_element_mdref_checksum(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_checksum_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip44_check_administrative_metadata_premis_element_mdref_checksum_type(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_checksum_type_validation.xml")
+        self.assertTrue(validationResult==True)
+
 
 
 
