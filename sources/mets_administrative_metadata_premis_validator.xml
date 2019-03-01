@@ -102,4 +102,10 @@
             <assert test="@CHECKSUMTYPE">The type of checksum following the value list in the standard which used for the linked file.</assert>
         </rule>
     </pattern>
+    <pattern id="METS_administrative_metadata_premis_element_rightsmd_validation">
+        <title>Validate METS administrative element rightsmd</title>
+        <rule id="CSIP45-amdSec-rightsmd-validation" context="mets:amdSec">
+            <assert test="@rightsMD">For describing an overall access status for the package a simple rights statement may be used, as well as own local rights statements in use.</assert>
+        </rule>
+    </pattern>
 </schema>

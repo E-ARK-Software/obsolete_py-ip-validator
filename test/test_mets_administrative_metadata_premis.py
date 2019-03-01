@@ -11,19 +11,19 @@ class MetsAdministrativeMetadataPremisTestCase(Base):
         self.assertTrue(validationResult==True)
 
     def test_csip31_check_administrative_metadata_premis_element(self):
-        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element_not_exists.xml")
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_not_exists.xml")
         self.assertTrue(validationResult==True)
 
     def test_csip32_check_administrative_metadata_premis_element_digiprovmd(self):
-        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element_digiprovmd_validation.xml")
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_digiprovmd_validation.xml")
         self.assertTrue(validationResult==True)
 
     def test_csip33_check_administrative_metadata_premis_element_digiprovmd_id(self):
-        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element_digiprovmd_id_validation.xml")
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_digiprovmd_id_validation.xml")
         self.assertTrue(validationResult==True)
 
     def test_csip34_check_administrative_metadata_premis_element_digiprovmd_status(self):
-        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element_digiprovmd_status_validation.xml")
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_digiprovmd_status_validation.xml")
         self.assertTrue(validationResult==True)
 
     def test_csip35_check_administrative_metadata_premis_element_mdref(self):
@@ -64,6 +64,10 @@ class MetsAdministrativeMetadataPremisTestCase(Base):
 
     def test_csip44_check_administrative_metadata_premis_element_mdref_checksum_type(self):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_mdref_checksum_type_validation.xml")
+        self.assertTrue(validationResult==True)
+
+    def test_csip45_check_administrative_metadata_premis_element_rightsmd(self):
+        validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_rightsmd_not_exists.xml")
         self.assertTrue(validationResult==True)
 
 
