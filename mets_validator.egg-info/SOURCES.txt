@@ -1,9 +1,0 @@
-README.md
-mets-validator/MetsValidatorFunctions.py
-mets-validator/__init__.py
-mets-validator/get-pip.py
-mets_validator.egg-info/PKG-INFO
-mets_validator.egg-info/SOURCES.txt
-mets_validator.egg-info/dependency_links.txt
-mets_validator.egg-info/requires.txt
-mets_validator.egg-info/top_level.txt
