@@ -31,7 +31,7 @@
         <rule id="CSIP5-CONTENTTYPESPECIFICATION-OTHER" context="mets:mets">
             <assert test="(contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFERMS') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFSFSB') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD1') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD2') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARDDK') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoVectorGML') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoRasterGeotiff') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'MIXED') or (contains(string(@csip:CONTENTTYPESPECIFICATION), 'OTHER' and @csip:OTHERCONTENTTYPESPECIFICATION)))">If the value of a CONTENTTYPESPECIFICATION attribute is "OTHER", then the OTHERCONTENTTYPESPECIFICATION attribute must be used</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_root_element_profile_validation">
         <rule id="CSIP6-PROFILE-url" context="mets:mets">
             <assert test="contains(string(@PROFILE), 'http://')">The PROFILE attribute has to have as its value the URL of the used profile.</assert>
@@ -63,7 +63,7 @@
         <rule id="CSIP11-OAISPACKAGETYPE" context="mets:metsHdr">
             <assert test="(contains(string(@csip:OAISPACKAGETYPE), 'SIP') or contains(string(@csip:OAISPACKAGETYPE), 'AIP') or contains(string(@csip:OAISPACKAGETYPE), 'DIP') or contains(string(@csip:OAISPACKAGETYPE), 'AIU') or contains(string(@csip:OAISPACKAGETYPE), 'AIC'))">An attribute added by the CS IP for describing the type of the IP. The vocabulary to be used contains values: SIP, AIP, DIP, AIU, AIC. The vocabulary is managed by the DILCIS Board and will be updated when required.</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_header_agent_validation">
         <rule id="CSIP12-agent-existence" context="mets:agent">
             <assert test="name()='mets:agent'">The metsHdr must include at least one agent describing the software which has been used to create the package (ROLE=”CREATOR” TYPE=”OTHER” OTHERTYPE=”SOFTWARE”). The use of this element for describing additional agents is optional and nor restricted or recommended by this specification.</assert>
@@ -93,7 +93,7 @@
         <rule id="CSIP18-agent-note-validation" context="mets:note">
             <assert test="contains(string(@OTHERTYPE), 'SOFTWARE') and name()='mets:note'">Additional information about the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE” this element MUST provide the version information for the tool which was used to create the IP.</assert>
         </rule>
-    </pattern>        
+    </pattern>
     <pattern id="METS_header_element_agent_note_type_validation">
         <rule id="CSIP19-agent-note-type-validation" context="mets:note">
             <assert test="contains(string(@OTHERTYPE), 'SOFTWARE') and (@csip:TYPE and contains(string(@csip:TYPE), 'SOFTWARE VERSION'))">Type attribute for the note element. If the value of the @OTHERTYPE attribute is “SOFTWARE” this attribute must be used with the fixed value “SOFTWARE VERSION”</assert>

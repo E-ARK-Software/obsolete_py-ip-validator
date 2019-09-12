@@ -31,7 +31,7 @@
         <rule id="CSIP5-CONTENTTYPESPECIFICATION-OTHER" context="mets:mets">
             <assert test="(contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFERMS') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFSFSB') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD1') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD2') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARDDK') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoVectorGML') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoRasterGeotiff') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'MIXED') or (contains(string(@csip:CONTENTTYPESPECIFICATION), 'OTHER' and @csip:OTHERCONTENTTYPESPECIFICATION)))">If the value of a CONTENTTYPESPECIFICATION attribute is "OTHER", then the OTHERCONTENTTYPESPECIFICATION attribute must be used</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_root_element_profile_validation">
         <rule id="CSIP6-PROFILE-url" context="mets:mets">
             <assert test="contains(string(@PROFILE), 'http://')">The PROFILE attribute has to have as its value the URL of the used profile.</assert>

@@ -53,7 +53,7 @@
         <rule id="CSIP36-mdref-loctype-validation" context="mets:mdRef">
             <assert test="@LOCTYPE">The locator type is always used with the value "URL" from the vocabulary in the attribute.</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_xlink_type_validation">
         <title>Validate METS administrative element type of link</title>
         <rule id="CSIP37-mdref-xlink-type-validation" context="mets:mdRef">

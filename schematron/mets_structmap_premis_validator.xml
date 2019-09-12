@@ -68,7 +68,7 @@ The ID must follow the rules for xml:id described in the chapter of the textual 
         <rule id="CSIP87-structmap-div-label-validation" context="mets:div">
             <assert test="(contains(string(@LABEL), 'Metadata') and contains(string(@LABEL), 'Schemas') and contains(string(@LABEL), 'Representation'))">Each catagorization "Documentation", "Schemas" as well as each "Representation" within the package must be represented by an occurrence of the division (div) element. Metadata in the administrative and descriptive metadata section has its own division.</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_structmap_premis_element_div_div_validation">
         <title>Validate METS structmap element div div</title>
         <rule id="CSIP88-structmap-div-div-validation" context="mets:structMap">

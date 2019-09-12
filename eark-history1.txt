@@ -18,11 +18,11 @@
    18  git clone https://github.com/DILCISBoard/eark-ip-testcorpus.git
    19  git clone https://github.com/DILCISBoard/eark-ip-test-corpus.git
    20  ls
-   21  gedit py-ip-validator/README.md 
+   21  gedit py-ip-validator/README.md
    22  cp wikidp-portal/* py-ip-validator/
    23  cp -rf wikidp-portal/* py-ip-validator/
    24  ls -al py-ip-validator/
-   25  gedit py-ip-validator/README.md 
+   25  gedit py-ip-validator/README.md
    26  gedit py-ip-validator/README.md &
    27  pip
    28  sudo apt install python-pip
@@ -30,19 +30,19 @@
    30  ls
    31  cd py-ip-validator/
    32  ls
-   33  cat venv.sh 
-   34  ./venv.sh 
-   35  .\venv.sh 
+   33  cat venv.sh
+   34  ./venv.sh
+   35  .\venv.sh
    36  virtualenv
    37  sudo apt install virtualenv
-   38  ./venv.sh 
+   38  ./venv.sh
    39  ls
-   40  cat setup.sh 
-   41  ./setup.sh 
+   40  cat setup.sh
+   41  ./setup.sh
    42  ls
    43  rm -rf ansible/
    44  rm -rf apicache-py3/
-   45  rm -rf Vagrantfile 
+   45  rm -rf Vagrantfile
    46  mkdir mets-validator
    47  ls -al wikidp
    48  rm mets-validator/
@@ -59,22 +59,22 @@
    59  rm -rf wikidp/
    60  rm -rf templates/
    61  rm -rf static/
-   62  rm -rf model.py 
-   63  rm -rf lists.py 
-   64  rm -rf wikitools-setup.py 
-   65  rm -rf distribute_setup.py 
-   66  rm -rf con 
-   67  rm -rf controller.py 
-   68  rm -rf const.py 
-   69  rm -rf config.py 
+   62  rm -rf model.py
+   63  rm -rf lists.py
+   64  rm -rf wikitools-setup.py
+   65  rm -rf distribute_setup.py
+   66  rm -rf con
+   67  rm -rf controller.py
+   68  rm -rf const.py
+   69  rm -rf config.py
    70  ls
-   71  cat DisplayFunctions.py 
-   72  gedit DisplayFunctions.py 
+   71  cat DisplayFunctions.py
+   72  gedit DisplayFunctions.py
    73  mv DisplayFunctions.py MetsValidatorFunctions.py
    74  cd ..
    75  ls
    76  gedit setup.py
-   77  ./setup.sh 
+   77  ./setup.sh
    78  ls
    79  rm wikidp.egg-info/
    80  rm -rf wikidp.egg-info/
@@ -82,22 +82,22 @@
    82  cd mets-validator/
    83  ls
    84  gedit MetsValidator.py
-   85  cat MetsValidatorFunctions.py 
+   85  cat MetsValidatorFunctions.py
    86  gedit MetsValidator.py
    87  python MetsValidator.py
    88  gedit MetsValidator.py
    89  python MetsValidator.py
    90  cd ..
    91  ls
-   92  cat run.sh 
-   93  gedit run.sh 
-   94  ./run.sh 
+   92  cat run.sh
+   93  gedit run.sh
+   94  ./run.sh
    95  gedit mets-validator/MetsValidator.py
-   96  ./run.sh 
+   96  ./run.sh
    97  gedit mets-validator/MetsValidator.py
-   98  ./run.sh 
+   98  ./run.sh
    99  ls
-  100  gedit README.md 
+  100  gedit README.md
   101  gedit mets-validator/MetsValidator.py
-  102  ./run.sh 
+  102  ./run.sh
   103  history > eark-history1.txt
