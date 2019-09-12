@@ -1,7 +1,7 @@
-from base import Base
+from test.base import Base
 from metsvalidator.mets_validator_impl import validate
 
-# In this class we test first the correct mets descriptive metadata element and then different error samples. 
+# In this class we test first the correct mets descriptive metadata element and then different error samples.
 # If validation error was detected - validation result should be False.
 class MetsDescriptiveMetadataTestCase(Base):
     """ Tests for METS descriptive metadata element """
@@ -79,5 +79,3 @@ class MetsDescriptiveMetadataTestCase(Base):
     def test_csip36_check_descriptive_metadata_core_checksumtype_validation(self):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_descriptive_metadata_element/mets_descriptive_metadata_core_checksumtype_validation.xml")
         self.assertTrue(validationResult==True)
-
-

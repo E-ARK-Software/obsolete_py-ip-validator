@@ -1,7 +1,7 @@
-from base import Base
+from test.base import Base
 from metsvalidator.mets_validator_impl import validate
 
-# In this class we test first the correct mets header element and then different error samples. 
+# In this class we test first the correct mets header element and then different error samples.
 # If validation error was detected - validation result should be False.
 class MetsHeaderTestCase(Base):
     """ Tests for METS header element """
@@ -55,4 +55,3 @@ class MetsHeaderTestCase(Base):
     def test_csip19_check_header_agent_note_type_element(self):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_header_element/mets_header_element_agent_note_type_not_exists.xml")
         self.assertTrue(validationResult==True)
-

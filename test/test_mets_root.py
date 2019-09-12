@@ -1,7 +1,7 @@
 from metsvalidator.mets_validator_impl import validate
-from base import Base
+from test.base import Base
 
-# In this class we test first the correct mets root element and then different error samples. 
+# In this class we test first the correct mets root element and then different error samples.
 # If validation error was detected - validation result should be False.
 class MetsRootTestCase(Base):
     """ Tests for METS root element """
@@ -36,4 +36,3 @@ class MetsRootTestCase(Base):
     def test_csip6_content_specification_missing_profile_url_error(self):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_root_element/mets_root_element_profile_url_not_exists.xml")
         self.assertTrue(validationResult==False)
-

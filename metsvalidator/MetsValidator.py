@@ -15,7 +15,7 @@
 #
 #CSIP3: The Information Package folder CAN be compressed (for example by using TAR or ZIP)
 #
-#CSIP4: The Information Package folder MUST include a metadata file named METS.xml, which includes information about the identity and structure of the package and its components 
+#CSIP4: The Information Package folder MUST include a metadata file named METS.xml, which includes information about the identity and structure of the package and its components
 #
 #CSIP5: The Information Package folder MUST include a folder named metadata, which MUST include at least all metadata relevant for the whole package
 #
@@ -27,9 +27,9 @@
 #
 #CSIP9: The Information Package folder MUST include a folder named representations
 #
-#CSIP10: The representations folder MUST include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for an representation sub-folder) 
+#CSIP10: The representations folder MUST include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for an representation sub-folder)
 #
-#CSIP11: The representation folder MUST include a sub-folder named data which includes all data constituting the representation 
+#CSIP11: The representation folder MUST include a sub-folder named data which includes all data constituting the representation
 #
 #CSIP12: The representation folder CAN include a metadata file named METS.xml which includes information about the identity and structure of the representation
 #
@@ -65,7 +65,7 @@ def main():
 
     # Parse schema
     sct_doc = etree.parse(f)
-    schematron = isoschematron.Schematron(sct_doc, store_report = True)
+    schematron = isoschematron.Schematron(sct_doc, store_report=True)
 
     # XML to validate - validation will fail because sum of numbers
     # not equal to 100

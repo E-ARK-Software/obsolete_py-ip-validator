@@ -1,7 +1,7 @@
-from base import Base
+from test.base import Base
 from metsvalidator.mets_validator_impl import validate
 
-# In this class we test first the correct mets administrative metadata element in PREMIS format and then different error samples. 
+# In this class we test first the correct mets administrative metadata element in PREMIS format and then different error samples.
 # If validation error was detected - validation result should be False.
 class MetsAdministrativeMetadataPremisTestCase(Base):
     """ Tests for METS administrative metadata premis element """
@@ -69,7 +69,3 @@ class MetsAdministrativeMetadataPremisTestCase(Base):
     def test_csip45_check_administrative_metadata_premis_element_rightsmd(self):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_rightsmd_not_exists.xml")
         self.assertTrue(validationResult==True)
-
-
-
-

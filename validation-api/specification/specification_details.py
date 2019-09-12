@@ -36,14 +36,14 @@ class SpecificationDetails:
         self.description = description
 
     def describe(self):
-        print 'Specification details - name: %s, version: %s, location: %s, description: %s' % (self.name, self.version, self.location, self.description)
+        print('Specification details - name: %s, version: %s, location: %s, description: %s' % self.name, self.version, self.location, self.description)
 
 def main():
 
     # test code
     pass
 
-# this means that if this script is executed, then 
+# this means that if this script is executed, then
 # main() will be executed
 if __name__ == '__main__':
     main()

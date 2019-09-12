@@ -13,8 +13,8 @@ from argparse import ArgumentParser
 
 import validation
 import specification
-from specification import specification_details 
-from specification import specification 
+from specification import specification_details
+from specification import specification
 import validation_utils
 
 validation_api = None
@@ -41,15 +41,15 @@ class ValidationApi:
 
     # Specification format
     def set_supported_specifications(self, specification):
-	self.specifications.append(specification)
+	    self.specifications.append(specification)
 
-    # returns a list of specification summaries Set<SpecificationDetails> 
+    # returns a list of specification summaries Set<SpecificationDetails>
     def get_supported_specification_summaries(self):
         return self.specifications_details
 
-    # SpecificationDetails format 
+    # SpecificationDetails format
     def set_supported_specification_summaries(self, specification_detail):
-	self.specifications_details.append(specification_detail)
+	    self.specifications_details.append(specification_detail)
 
     # return specification of type Specification by String values
     def get_specification(self, spec_name, spec_version):
@@ -73,7 +73,7 @@ class ValidationApi:
     #def validate(SpecificationDetails spec, InputStream packageStream):
     #    pass
 
-    # Method to validate packages in a directory. Retuns result in format ValidationResult using 
+    # Method to validate packages in a directory. Retuns result in format ValidationResult using
     # SpecificationDetails and package root as a Sting
     def validate(self, spec, package_root, validation_rule_path):
         return validation_utils.validate(spec, package_root, validation_rule_path)
@@ -145,17 +145,17 @@ def main():
         print ("create validation rules and add it to specification ...")
         validation_rules = validation_utils.read_rules(validation_rule_path)
         specification_obj.add_rule(validation_rules)
-   
+
         supported_specifications = validation_api.get_supported_specifications()
         for spec in supported_specifications:
-	    spec.describe()
-   
+	        spec.describe()
+
         for summary in validation_api.get_supported_specification_summaries():
-	    summary.describe()
+	        summary.describe()
 
         check_spec = validation_api.get_specification(supported_specifications[0].get_details()[0].name, supported_specifications[0].get_details()[0].version)
-        print 'got specification: '
-        print check_spec.describe()
+        print('got specification: ')
+        print(check_spec.describe())
 
         supported = validation_api.is_supported(supported_specifications[0].get_details()[0].name, supported_specifications[0].get_details()[0].version)
         print ("specification is supported", supported)
@@ -169,24 +169,22 @@ def main():
     elif api_type == 'getspecs':
         supported_specifications = validation_api.get_supported_specifications()
         for spec in supported_specifications:
-	    print ("supported specification", spec.describe())
+            print("supported specification %s", spec.describe())
     elif api_type == 'getspecsummaries':
         supported_specification_summaries = validation_api.get_supported_specification_summaries()
         for summary in validation_api.supported_specification_summaries:
-	    print ("supported specification summary", summary.describe())
+	        print("supported specification summary", summary.describe())
     elif api_type == 'issupported':
         supported = validation_api.is_supported(specification.name, specification.version)
-        print ("specification is supported", supported)
+        print("specification is supported", supported)
     elif api_type == 'getversion':
-        print '%s %10s' %("validation API version", validation_api.get_version())
+        print('%s %10s' % "validation API version", validation_api.get_version())
     elif api_type == 'validate':
-        print ("validate package ...")
+        print("validate package ...")
         validation_result = validation_api.validate(specification, package_root)
         validation_result.describe()
 
-# this means that if this script is executed, then 
+# this means that if this script is executed, then
 # main() will be executed
 if __name__ == '__main__':
     main()
-
-
