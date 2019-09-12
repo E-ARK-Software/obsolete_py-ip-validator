@@ -14,10 +14,9 @@ from setuptools import setup
 
 setup(
     name='mets-validator',
-    packages=['mets-validator'],
+    packages=['metsvalidator'],
     include_package_data=True,
     install_requires=[
         'lxml==3.7.3'
     ],
 )
-

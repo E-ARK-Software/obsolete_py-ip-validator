@@ -18,7 +18,7 @@ class Specification:
     # The spec details in format SpecificationDetails
     details = []
 
-    # The set of validation rules associated with the specification in format Set<ValidationRule> 
+    # The set of validation rules associated with the specification in format Set<ValidationRule>
     rules = []
 
     def get_details(self):
@@ -26,17 +26,17 @@ class Specification:
 
     # parameter in String format
     def is_supported(self, name, version):
-        for detail in self.details:  
-            #print (detail.describe())    
-	    if detail.name == name and detail.version == version:
-                return True
+        for detail in self.details:
+            #print (detail.describe())
+	        if detail.name == name and detail.version == version:
+                    return True
         return False
 
 
     def get_rules():
         return self.rules
 
-    # in SpecificationDetails format 
+    # in SpecificationDetails format
     def add_detail(self, specification_detail):
         self.details.append(specification_detail)
         #self.details = self.details + specification_detail
@@ -47,7 +47,7 @@ class Specification:
         self.rules = self.rules + rule
 
     def describe(self):
-        print 'Specification - details name: %s, details number: %d, rules number: %d' % (self.details[0].name, len(self.details), len(self.rules))
+        print('Specification - details name: %s, details number: %d, rules number: %d' % self.details[0].name, len(self.details), len(self.rules))
 
 
 def main():
@@ -55,7 +55,7 @@ def main():
     # test code
     pass
 
-# this means that if this script is executed, then 
+# this means that if this script is executed, then
 # main() will be executed
 if __name__ == '__main__':
     main()

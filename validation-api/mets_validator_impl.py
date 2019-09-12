@@ -15,7 +15,7 @@
 #
 #CSIP3: The Information Package folder CAN be compressed (for example by using TAR or ZIP)
 #
-#CSIP4: The Information Package folder MUST include a metadata file named METS.xml, which includes information about the identity and structure of the package and its components 
+#CSIP4: The Information Package folder MUST include a metadata file named METS.xml, which includes information about the identity and structure of the package and its components
 #
 #CSIP5: The Information Package folder MUST include a folder named metadata, which MUST include at least all metadata relevant for the whole package
 #
@@ -27,9 +27,9 @@
 #
 #CSIP9: The Information Package folder MUST include a folder named representations
 #
-#CSIP10: The representations folder MUST include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for an representation sub-folder) 
+#CSIP10: The representations folder MUST include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for an representation sub-folder)
 #
-#CSIP11: The representation folder MUST include a sub-folder named data which includes all data constituting the representation 
+#CSIP11: The representation folder MUST include a sub-folder named data which includes all data constituting the representation
 #
 #CSIP12: The representation folder CAN include a metadata file named METS.xml which includes information about the identity and structure of the representation
 #
@@ -65,15 +65,15 @@ def load_xml(filename):
 
 def validate(rules, sample_file):
     #print (rules, sample_file)
-    f = io.StringIO(unicode(rules))
-    
+    f = io.StringIO(rules)
+
     # Parse schema
     sct_doc = etree.parse(f)
     schematron = isoschematron.Schematron(sct_doc, store_report = True)
 
     # XML to validate
     sample = load_xml(sample_file)
-    isValid = io.StringIO(unicode(sample))
+    isValid = io.StringIO(sample)
 
     # Parse xml
     doc = etree.parse(isValid)
@@ -118,15 +118,15 @@ def main():
 
     # XML to validate
     notValid = io.StringIO('''\
-	<mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	    xmlns:mets="http://www.loc.gov/METS/" 
+	<mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xmlns:mets="http://www.loc.gov/METS/"
 	    xmlns:xlink="http://www.w3.org/1999/xlink"
 	    xmlns:csip="DILCIS"
-	    OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
-	    LABEL="Sample CS IP Information Package" 
-	    TYPE="Database" 
-	    csip:CONTENTTYPESPECIFICATION="SIARD3" 	
-	    PROFILE="http://www.eark-project.com/METS/IP.xml" 
+	    OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
+	    LABEL="Sample CS IP Information Package"
+	    TYPE="Database"
+	    csip:CONTENTTYPESPECIFICATION="SIARD3"
+	    PROFILE="http://www.eark-project.com/METS/IP.xml"
 	    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd">
          </mets:mets>
         ''')

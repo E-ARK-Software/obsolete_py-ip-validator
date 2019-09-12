@@ -13,4 +13,3 @@
 # main package contents
 #"""Initialisation module for package, validates METS input in XML format."""
 #from . import mets_validator_impl
-

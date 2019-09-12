@@ -1,7 +1,7 @@
-from base import Base
+from test.base import Base
 from metsvalidator.mets_validator_impl import validate
 
-# In this class we test first the correct mets structmap element in PREMIS format and then different error samples. 
+# In this class we test first the correct mets structmap element in PREMIS format and then different error samples.
 # If validation error was detected - validation result should be False.
 class MetsStructMapPremisTestCase(Base):
     """ Tests for METS structmap premis element """
@@ -141,4 +141,3 @@ class MetsStructMapPremisTestCase(Base):
     def test_csip112_check_structmap_premis_element_div_div_representation_mptr_loctype(self):
         validationResult, report = validate(self.rules, self.SOURCES_PATH+"mets_structmap_premis_element/mets_structmap_premis_element_div_div_representation_mptr_loctype_not_exists.xml")
         self.assertTrue(validationResult==True)
-
