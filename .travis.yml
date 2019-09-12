@@ -1,5 +1,16 @@
 language: python
 python:
- - "3.6"
+ - "3.5"
+
+before_install:
+  - sudo apt-get update -yqq
+
+install:
+  - pip install .[testing]
+
+before_script:
+  - pylint --errors-only ./test
+  - pylint --errors-only ./metsvalidator
+
 script:
- - runMetsValidatorTests.sh
+ - pytest

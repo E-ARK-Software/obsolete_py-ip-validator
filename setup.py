@@ -10,13 +10,27 @@
 # about the terms of this license.
 #
 """Setup for METS validator app."""
-from setuptools import setup
+from setuptools import setup, find_packages
+
+TEST_DEPS = [
+    'pre-commit',
+    'pytest',
+    'pylint',
+    'pytest-coverage'
+]
+EXTRAS = {
+    'testing': TEST_DEPS,
+}
 
 setup(
-    name='mets-validator',
-    packages=['metsvalidator'],
+    name='E-ARK Information Package Validator',
+    packages=find_packages(),
+    version='0.1-dev',
+    long_description=open('README.md').read(),
     include_package_data=True,
     install_requires=[
         'lxml==3.7.3'
     ],
+    tests_requires=TEST_DEPS,
+    extras_require=EXTRAS,
 )
