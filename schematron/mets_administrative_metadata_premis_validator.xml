@@ -4,71 +4,71 @@
     <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
     <pattern id="METS_root_element_validation">
         <title>Validate METS root element.</title>
-        <rule id="CSIP1-Root-element-validation" context="mets:mets">
+        <rule id="CSIP1" context="mets:mets">
             <assert test="name()='mets:mets'">The root level element is required in all METS documents</assert>
         </rule>
     </pattern>
     <pattern id="METS_root_element_object_id_validation">
         <title>Validate METS root element.</title>
-        <rule id="CSIP2-OBJID-validation" context="mets:mets">
+        <rule id="CSIP2" context="mets:mets">
             <assert test="@OBJID">It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the CS IP requirement of being unique at least across the repository.</assert>
         </rule>
     </pattern>
     <pattern id="METS_root_element_type_validation">
-        <rule id="CSIP3-TYPE-existence" context="mets:mets">
+        <rule id="CSIP3" context="mets:mets">
             <assert test="@TYPE">General content type attribute does not exist.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_validation">
         <title>Validate METS administrative element amdSec.</title>
-        <rule id="CSIP31-amdSec-validation" context="mets:amdSec">
+        <rule id="CSIP31" context="mets:amdSec">
             <assert test="name()='mets:amdSec'">If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element. It is possible to transfer metadata in a package using just the descriptive metadata sectiond/or adminstrative metadata section.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_digiprovmd_validation">
-        <rule id="CSIP32-digiprovMD-validation" context="mets:amdSec">
+        <rule id="CSIP32" context="mets:amdSec">
             <assert test="name()='amdSec:digiprovMD'">For recording information about preservation events the standard PREMIS is used. The PREMIS metadata must be either embedded or linked in a digital provenance metadata (digiprovMD) element. It is mandatory to include one digiprovMD element for each external PREMIS file placed in the “metadata/preservation” section, or for each embedded set of PREMIS metadata.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_digiprovmd_id_validation">
         <title>Validate METS administrative element digital provenance metadata identfier.</title>
-        <rule id="CSIP33-digiprovMD-id-validation" context="amdSec:digiprovMD">
+        <rule id="CSIP33" context="amdSec:digiprovMD">
             <assert test="@ID">An identifier for the digital provenance metadata section (digiprovMD) used for referencing inside the package. It must be unique within the package. The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata"</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_digiprovmd_status_validation">
         <title>Validate METS administrative element digital provenance metadata status.</title>
-        <rule id="CSIP34-digiprovMD-status-validation" context="amdSec:digiprovMD">
+        <rule id="CSIP34" context="amdSec:digiprovMD">
             <assert test="(contains(string(@STATUS), 'SUPERSEDED') or contains(string(@STATUS), 'CURRENT') and count(@STATUS)>0">Status of the metadata. Used to indicate the currency of the package. If used the two values "SUPERSEDED" or "CURRENT" from the vocabulary is used.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_validation">
         <title>Validate METS administrative element reference to the document with the digital provenance metdata amdSec/digiprovMD/mdRef</title>
-        <rule id="CSIP35-mdRef-validation" context="mets:amdSec">
+        <rule id="CSIP35" context="mets:amdSec">
             <assert test="name()='amdSec:mdRef' and count(amdSec:mdRef)>0">Reference to the digital provenance metadata file stored in the "metadata" section of the IP.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_loctype_validation">
         <title>Validate METS administrative element type of locator</title>
-        <rule id="CSIP36-mdref-loctype-validation" context="mets:mdRef">
+        <rule id="CSIP36" context="mets:mdRef">
             <assert test="@LOCTYPE">The locator type is always used with the value "URL" from the vocabulary in the attribute.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_xlink_type_validation">
         <title>Validate METS administrative element type of link</title>
-        <rule id="CSIP37-mdref-xlink-type-validation" context="mets:mdRef">
+        <rule id="CSIP37" context="mets:mdRef">
             <assert test="@type">Attribute used with the value “simple”. Value list is maintained by the xlink standard</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_xlink_href_validation">
         <title>Validate METS administrative element resource location</title>
-        <rule id="CSIP38-mdref-xlink-href-validation" context="mets:mdRef">
+        <rule id="CSIP38" context="mets:mdRef">
             <assert test="@href">The actual location of the resource. This specification recommends recording a URL type filepath within this attribute.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_xlink_href_validation">
         <title>Validate METS administrative element metadata type</title>
-        <rule id="CSIP39-mdref-mdtype-validation" context="mets:mdRef">
+        <rule id="CSIP39" context="mets:mdRef">
             <assert test="@MDTYPE">Specifies the type of metadata in the linked file. Values are taken from the list provided by the standard.</assert>
         </rule>
     </pattern>
