@@ -4,7 +4,7 @@ py-ip-validator
 Python IP Validator Prototype
 ==============================
 A prototype for the METS data validation. This prototype implements the structure validation defined by the following rules (CSIP1 to CSIP17):
- 
+
 https://carlwilson.github.io/E-ARK-CSIP/specification/implementation/metadata/#531-use-of-the-mets-root-element-element-mets
 
 The implementation requirements of the CS IP Information Package structure are:
@@ -15,7 +15,7 @@ CSIP2: The Information Package folder SHOULD be named with the ID or name of the
 
 CSIP3: The Information Package folder CAN be compressed (for example by using TAR or ZIP)
 
-CSIP4: The Information Package folder MUST include a metadata file named METS.xml, which includes information about the identity and structure of the package and its components 
+CSIP4: The Information Package folder MUST include a metadata file named METS.xml, which includes information about the identity and structure of the package and its components
 
 CSIP5: The Information Package folder MUST include a folder named metadata, which MUST include at least all metadata relevant for the whole package
 
@@ -27,9 +27,9 @@ CSIP8: If any other metadata are available, they CAN be included in separate sub
 
 CSIP9: The Information Package folder MUST include a folder named representations
 
-CSIP10: The representations folder MUST include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for an representation sub-folder) 
+CSIP10: The representations folder MUST include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for an representation sub-folder)
 
-CSIP11: The representation folder MUST include a sub-folder named data which includes all data constituting the representation 
+CSIP11: The representation folder MUST include a sub-folder named data which includes all data constituting the representation
 
 CSIP12: The representation folder CAN include a metadata file named METS.xml which includes information about the identity and structure of the representation
 
@@ -44,7 +44,7 @@ CSIP16: We recommend including all additional (binary) documentation about the w
 CSIP17: Implementers CAN add any other folders either into the Information Package folder or the representation folder
 
 Test cases which should be used for running the tests:
- 
+
 https://github.com/DILCISBoard/eark-ip-test-corpus/tree/master/corpus/structure/root
 
 Pre-requisites
@@ -110,9 +110,9 @@ Finally run the validator application:
 ````bash
 (venv) $ python mets-validator/MetsValidator.py
 ````
-There's a script that you can use for this in the project root, `run.sh`. 
+There's a script that you can use for this in the project root, `run.sh`.
 Or to run unit tests `runMetsValidatorTests.sh`
 
 For testing adjust XML samples stored in files if necessary.
 
-This code is released under the GPLv3 license. 
+This code is released under the GPLv3 license.

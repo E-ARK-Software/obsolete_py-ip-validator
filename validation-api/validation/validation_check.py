@@ -21,7 +21,7 @@ class ValidationCheck:
     rule = None
 
     # Set of results for the check. In practise will normally be pre-sorted into
-    # pass and fails for use in report. Format is Set<CheckResult> 
+    # pass and fails for use in report. Format is Set<CheckResult>
     results = []
 
 def main():
@@ -29,7 +29,7 @@ def main():
     # test code
     pass
 
-# this means that if this script is executed, then 
+# this means that if this script is executed, then
 # main() will be executed
 if __name__ == '__main__':
     main()

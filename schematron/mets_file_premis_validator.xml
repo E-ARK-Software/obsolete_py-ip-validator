@@ -42,7 +42,7 @@
         <rule id="CSIP61-fileSec-admid-validation" context="mets:file">
             <assert test="@ADMID">If administrative metadata is has been provided on the file group (fileGrp) level this attribute points to the correct administrative metadata section.</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_file_premis_element_contentinformationtype_validation">
         <title>Validate METS file element contentinformationtype</title>
         <rule id="CSIP62-fileSec-contentinformationtype-validation" context="mets:fileGrp">
@@ -109,7 +109,7 @@ When the file element is categorised as "Representations" each representation fi
         <rule id="CSIP72-fileSec-grp-checksum-type-validation" context="mets:file">
             <assert test="@CHECKSUMTYPE">The type of checksum following the value list in the standard which used for the linked file.</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_file_premis_element_grp_file_owner_id_validation">
         <title>Validate METS file element file owner id</title>
         <rule id="CSIP73-fileSec-grp-owner-id-validation" context="mets:file">
@@ -139,18 +139,18 @@ When the file element is categorised as "Representations" each representation fi
         <rule id="CSIP77-fileSec-grp-flocat-loctype-validation" context="mets:Flocat">
             <assert test="@LOCTYPE">The locator type is always used with the value "URL" from the vocabulary in the attribute.</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_file_premis_element_grp_file_flocat_type_validation">
         <title>Validate METS file element file flocat type</title>
         <rule id="CSIP78-fileSec-grp-flocat-type-validation" context="mets:Flocat">
             <assert test="@type">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</assert>
         </rule>
-    </pattern>    
+    </pattern>
     <pattern id="METS_file_premis_element_grp_file_flocat_href_validation">
         <title>Validate METS file element file flocat href</title>
         <rule id="CSIP79-fileSec-grp-flocat-href-validation" context="mets:Flocat">
             <assert test="@href">The actual location of the resource. We recommend recording a URL type filepath within this attribute.</assert>
         </rule>
-    </pattern>    
-    
+    </pattern>
+
 </schema>

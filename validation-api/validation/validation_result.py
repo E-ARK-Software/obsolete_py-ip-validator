@@ -6,7 +6,7 @@ import level
 import status
 
 class ValidationResult:
-    
+
     # Overall validation result level
     LEVEL level;
 
@@ -24,6 +24,6 @@ class ValidationResult:
 
     # The number of info level validation checks
     int info_total;
-    
+
     def describe(self):
         print("Validation result:", "level", level, "status", status, "passed checks", passed_checks, "error total", error_total, "warning total", warning_total, "info total", info_total)

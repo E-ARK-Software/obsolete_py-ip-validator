@@ -13,5 +13,5 @@ class Enumeration(set):
             if l == level:
                 return l
 
-LEVEL = Enumeration(["ERROR","WARN","INFO"])  
+LEVEL = Enumeration(["ERROR","WARN","INFO"])
 levels = [LEVEL.ERROR, LEVEL.WARN, LEVEL.INFO]

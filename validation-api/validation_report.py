@@ -27,4 +27,3 @@ class ValidationReport:
 
     # List of info level checks
     Set<ValidationCheck> infos;
-

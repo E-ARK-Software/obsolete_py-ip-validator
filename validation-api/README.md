@@ -1,6 +1,6 @@
 * This package comprises a validation command line API.
- 
-Example usage: 
+
+Example usage:
 
 python validation_api.py -t <all> <-a path1> <-s path2> <-r path3>
 
@@ -25,7 +25,7 @@ py-ip-validator$ git clone https://github.com/DILCISBoard/E-ARK-CSIP.git
 
 ** The xml structure is provided in examples.md files e.g. amdsec specification:
 
-E-ARK-CSIP/specification/implementation/metadata/mets/amdsec/examples.md 
+E-ARK-CSIP/specification/implementation/metadata/mets/amdsec/examples.md
 
 
 ** Validation rules are loaded from the validator sources e.g. amdsec validator:
@@ -34,7 +34,7 @@ sources/mets_administrative_metadata_premis_validator.xml
 
 
 ** Archive package (positive and negative samples) are loaded from the validator sources e.g. amdsec positive sample:
- 
+
 sources/mets_administrative_metadata_premis_element/mets_administrative_metadata_premis_element_ok.xml
 
 

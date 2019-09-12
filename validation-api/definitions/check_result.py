@@ -14,7 +14,7 @@
 import location
 import path
 
-class CheckResult: 
+class CheckResult:
 
     # True if the check passed, false otherwise
     is_passed = True
@@ -22,12 +22,12 @@ class CheckResult:
     # Location needs design. It should be the best way of reporting the source
     # of the failure to the user, e.g. the path, line number and xpath for a METS
     # file location. I figured you might be best figuring our what actually works
-    # here... Format is Location 
+    # here... Format is Location
     location = ''
 
     # A list of relative package paths to items related to test failure,
     # e.g. a missing package file, a file that fails hash integrity checking, etc.
-    # Format is List<Path> 
+    # Format is List<Path>
     related_items = []
 
     def describe(self):
@@ -38,7 +38,7 @@ def main():
     # test code
     pass
 
-# this means that if this script is executed, then 
+# this means that if this script is executed, then
 # main() will be executed
 if __name__ == '__main__':
     main()

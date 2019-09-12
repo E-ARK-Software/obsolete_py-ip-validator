@@ -3,7 +3,7 @@
 import level
 
 class ValidationRule:
-    
+
     # The ID of the validation rule, e.g CSIP7
     String id;
 
@@ -23,7 +23,3 @@ class ValidationRule:
 
     def describe(self):
         print("Validation rule", id, level, message, description)
-
-
-
-

@@ -93,4 +93,3 @@ ValidationReport {
 
 ### Software build details
 Think about reporting build details (version, date) as a defined structure.
-
