@@ -1,8 +1,7 @@
+from test.utils import Utils
+from test.old_validator.base import Base
+
 from metsvalidator.mets_validator_impl import validate
-
-from old_validator.base import Base
-from utils import Utils
-
 # In this class we test first the correct mets header element and then different error samples.
 # If validation error was detected - validation result should be False.
 class MetsHeaderTestCase(Base):

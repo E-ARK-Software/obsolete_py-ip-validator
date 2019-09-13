@@ -1,10 +1,11 @@
 """
     Unit tests for PREMIS elements.
 """
-from old_validator.base import Base
+from test.old_validator.base import Base
+from test.utils import Utils
+
 from metsvalidator.mets_validator_impl import validate
 
-from utils import Utils
 
 # In this class we test first the correct mets file metadata element in
 # PREMIS format and then different error samples.
