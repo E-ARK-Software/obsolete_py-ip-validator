@@ -10,8 +10,10 @@ install:
 
 before_script:
   - pylint --errors-only ./test
+  - pylint --errors-only ./earkips
   - pylint --errors-only ./metsvalidator
 
 script:
  - pre-commit run --all-files --verbose
  - pytest --cov=metsvalidator
+ - pytest --cov=earkips
