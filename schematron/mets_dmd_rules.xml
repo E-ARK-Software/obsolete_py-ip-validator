@@ -1,12 +1,13 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron">
-    <ns prefix="csip" uri="DILCIS"/>
+    <ns prefix="csip" uri="https://dilcis.eu/XML/METS/CSIPExtensionMETS"/>
     <ns prefix="ead" uri="urn:isbn:1-931666-22-9"/>
     <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
+    <ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
+
     <pattern id="METS_descriptive_metadata_element_validation">
         <title>Validate METS header element dmdSec.</title>
-        <rule id="CSIP20" context="mets:dmdSec">
-            <assert test="name()='mets:dmdSec'">Must be used if descriptive metadata about the package content is available.
-NOTE: According to official METS documentation each metadata section must describe one and only one set of metadata. As such, if implementers want to include multiple occurrences of descriptive metadata into the package this must be done by repeating the whole dmdSec element for each individual metadata.</assert>
+        <rule id="CSIP20" context="mets:mets">
+            <assert test="count(mets:dmdSec) > 0">Must be used if descriptive metadata about the package content is available. NOTE: According to official METS documentation each metadata section must describe one and only one set of metadata. As such, if implementers want to include multiple occurrences of descriptive metadata into the package this must be done by repeating the whole dmdSec element for each individual metadata.</assert>
         </rule>
     </pattern>
     <pattern id="METS_descriptive_metadata_element_id_validation">
@@ -29,10 +30,9 @@ NOTE: According to official METS documentation each metadata section must descri
             <assert test="@STATUS">Status of the metadata. Recommended for use to indicate currency of package. If used it is recommended to use one of the two values “SUPERSEDED” or “CURRENT”.</assert>
         </rule>
     </pattern>
-    <pattern id="METS_descriptive_metadata_element_package_creation_date_validation">
+    <pattern id="METS_descriptive_metadata_element_package_creation_date">
         <rule id="CSIP25" context="mets:dmdSec">
-            <assert test="name()='mets:mdRef'">Reference to the descriptive metadata file stored in the “metadata” folder of the IP.
-In each occurrence of the dmdSec exactly one occurrence of the mdRef element must be present.</assert>
+            <assert test="name()='mets:mdRef'">Reference to the descriptive metadata file stored in the “metadata” folder of the IP. In each occurrence of the dmdSec exactly one occurrence of the mdRef element must be present.</assert>
         </rule>
     </pattern>
 

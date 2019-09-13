@@ -1,7 +1,9 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron">
-    <ns prefix="csip" uri="DILCIS"/>
+    <ns prefix="csip" uri="https://dilcis.eu/XML/METS/CSIPExtensionMETS"/>
     <ns prefix="ead" uri="urn:isbn:1-931666-22-9"/>
     <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
+    <ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
+
     <pattern id="METS_header_element_validation">
         <title>Validate METS header element metsHdr.</title>
         <rule id="CSIP7" context="mets:metsHdr">

@@ -1,0 +1,24 @@
+<mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mets="http://www.loc.gov/METS/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+    OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
+    LABEL="Sample CS IP Information Package"
+    TYPE="Database"
+    csip:CONTENTTYPESPECIFICATION="SIARD2"
+    PROFILE="http://www.eark-project.com/METS/IP.xml"
+    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd">
+    <mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
+  	    <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" xlink:type="simple"  xlink:href="metadata/descriptive/ead2002.xml" MIMETYPE="application/xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUMTYPE="SHA-256"/>
+  	</mets:dmdSec>
+    <mets:structMap ID="ID7060" TYPE="physical" LABEL="Common Specification structural map">
+      <mets:div ID="ID7063" LABEL="ID0001">
+        <mets:div ID="ID7064" LABEL="metadata" />
+        <mets:div ID="ID7065" LABEL="representations">
+          <mets:div ID="ID7066" LABEL="rep1">
+            <mets:div LABEL="data"/>
+          </mets:div>
+        </mets:div>
+      </mets:div>
+    </mets:structMap>
+</mets:mets>

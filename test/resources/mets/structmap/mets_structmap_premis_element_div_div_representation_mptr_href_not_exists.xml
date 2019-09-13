@@ -1,0 +1,23 @@
+<mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mets="http://www.loc.gov/METS/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+    OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
+    LABEL="Sample CS IP Information Package"
+    TYPE="Database"
+    csip:CONTENTINFORMATIONTYPE="OTHER"
+    csip:OTHERCONTENTINFORMATIONTYPE="FGS Personal, version 1"
+    csip:CONTENTTYPESPECIFICATION="SIARD2"
+    PROFILE="http://earkcsip.dilcis.eu/profile/CSIP.xml"
+    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
+
+	<mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP StructMap">
+	  <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
+	    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C277">
+	      <mets:mptr LOCTYPE="URL" xlink:type="simple"/>
+
+	    </mets:div>
+	  </mets:div>
+	</mets:structMap>
+
+</mets:mets>

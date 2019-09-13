@@ -1,19 +1,21 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron">
-    <ns prefix="csip" uri="DILCIS"/>
+    <ns prefix="csip" uri="https://dilcis.eu/XML/METS/CSIPExtensionMETS"/>
     <ns prefix="ead" uri="urn:isbn:1-931666-22-9"/>
     <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
+    <ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
+
     <pattern id="METS_administrative_metadata_premis_element_validation">
         <title>Validate METS administrative element amdSec.</title>
         <rule id="CSIP31" context="mets:amdSec">
             <assert test="name()='mets:amdSec'">If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element. It is possible to transfer metadata in a package using just the descriptive metadata sectiond/or adminstrative metadata section.</assert>
         </rule>
     </pattern>
-    <pattern id="METS_administrative_metadata_premis_element_digiprovmd_validation">
+    <!-- <pattern id="METS_administrative_metadata_premis_element_digiprovmd_validation">
         <rule id="CSIP32" context="mets:amdSec">
             <assert test="name()='amdSec:digiprovMD'">For recording information about preservation events the standard PREMIS is used. The PREMIS metadata must be either embedded or linked in a digital provenance metadata (digiprovMD) element. It is mandatory to include one digiprovMD element for each external PREMIS file placed in the “metadata/preservation” section, or for each embedded set of PREMIS metadata.</assert>
         </rule>
-    </pattern>
-    <pattern id="METS_administrative_metadata_premis_element_digiprovmd_id_validation">
+    </pattern> -->
+    <!-- <pattern id="METS_administrative_metadata_premis_element_digiprovmd_id_validation">
         <title>Validate METS administrative element digital provenance metadata identfier.</title>
         <rule id="CSIP33" context="amdSec:digiprovMD">
             <assert test="@ID">An identifier for the digital provenance metadata section (digiprovMD) used for referencing inside the package. It must be unique within the package. The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata"</assert>
@@ -24,7 +26,7 @@
         <rule id="CSIP34" context="amdSec:digiprovMD">
             <assert test="(contains(string(@STATUS), 'SUPERSEDED') or contains(string(@STATUS), 'CURRENT') and count(@STATUS)>0">Status of the metadata. Used to indicate the currency of the package. If used the two values "SUPERSEDED" or "CURRENT" from the vocabulary is used.</assert>
         </rule>
-    </pattern>
+    </pattern> -->
     <pattern id="METS_administrative_metadata_premis_element_mdref_validation">
         <title>Validate METS administrative element reference to the document with the digital provenance metdata amdSec/digiprovMD/mdRef</title>
         <rule id="CSIP35" context="mets:amdSec">
@@ -49,7 +51,7 @@
             <assert test="@href">The actual location of the resource. This specification recommends recording a URL type filepath within this attribute.</assert>
         </rule>
     </pattern>
-    <pattern id="METS_administrative_metadata_premis_element_mdref_xlink_href_validation">
+    <pattern id="METS_administrative_metadata_premis_element_mdref_xlink_href_validation_a">
         <title>Validate METS administrative element metadata type</title>
         <rule id="CSIP39" context="mets:mdRef">
             <assert test="@MDTYPE">Specifies the type of metadata in the linked file. Values are taken from the list provided by the standard.</assert>

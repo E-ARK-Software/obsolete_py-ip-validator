@@ -13,10 +13,9 @@ class MetsRootTestCase(Base):
         for file in Utils.mets_type("root"):
             result, report = validate(self.rules, file)
             print(file)
-            print(report)
-            if "ok" in file:
-                self.assertTrue(result)
-            elif "sidelined" in file:
+            if ".sidelined" in file:
                 pass
+            elif ".valid" in file:
+                self.assertTrue(result, report)
             else:
-                self.assertFalse(result)
+                self.assertFalse(result, report)
