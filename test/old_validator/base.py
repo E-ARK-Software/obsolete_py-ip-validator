@@ -17,7 +17,7 @@ class Base(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.rules = load_xml(cls.make_schematron_path("mets_validator.xml"))
+        cls.rules = load_xml(cls.make_schematron_path("mets_root_rules.xml"))
 
     @classmethod
     def get_test_resources_dir(cls):

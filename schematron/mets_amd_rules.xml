@@ -2,23 +2,6 @@
     <ns prefix="csip" uri="DILCIS"/>
     <ns prefix="ead" uri="urn:isbn:1-931666-22-9"/>
     <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
-    <pattern id="METS_root_element_validation">
-        <title>Validate METS root element.</title>
-        <rule id="CSIP1" context="mets:mets">
-            <assert test="name()='mets:mets'">The root level element is required in all METS documents</assert>
-        </rule>
-    </pattern>
-    <pattern id="METS_root_element_object_id_validation">
-        <title>Validate METS root element.</title>
-        <rule id="CSIP2" context="mets:mets">
-            <assert test="@OBJID">It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the CS IP requirement of being unique at least across the repository.</assert>
-        </rule>
-    </pattern>
-    <pattern id="METS_root_element_type_validation">
-        <rule id="CSIP3" context="mets:mets">
-            <assert test="@TYPE">General content type attribute does not exist.</assert>
-        </rule>
-    </pattern>
     <pattern id="METS_administrative_metadata_premis_element_validation">
         <title>Validate METS administrative element amdSec.</title>
         <rule id="CSIP31" context="mets:amdSec">
@@ -74,37 +57,37 @@
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_mimetype_validation">
         <title>Validate METS administrative element MIME type</title>
-        <rule id="CSIP40-mdref-mimetype-validation" context="mets:mdRef">
+        <rule id="CSIP40" context="mets:mdRef">
             <assert test="@MIMETYPE">The IANA mime type for the linked file.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_file_size_validation">
         <title>Validate METS administrative element file size</title>
-        <rule id="CSIP41-mdref-file-size-validation" context="mets:mdRef">
+        <rule id="CSIP41" context="mets:mdRef">
             <assert test="@SIZE">Size of the linked file in bytes.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_created_validation">
         <title>Validate METS administrative element file creation date</title>
-        <rule id="CSIP42-mdref-created-validation" context="mets:mdRef">
+        <rule id="CSIP42" context="mets:mdRef">
             <assert test="@CREATED">Date the linked file was created.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_checksum_validation">
         <title>Validate METS administrative element checksum</title>
-        <rule id="CSIP43-mdref-checksum-validation" context="mets:mdRef">
+        <rule id="CSIP43" context="mets:mdRef">
             <assert test="@CHECKSUM">The checksum of the linked file.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_mdref_checksum_type_validation">
         <title>Validate METS administrative element checksum type</title>
-        <rule id="CSIP44-mdref-checksum-type-validation" context="mets:mdRef">
+        <rule id="CSIP44" context="mets:mdRef">
             <assert test="@CHECKSUMTYPE">The type of checksum following the value list in the standard which used for the linked file.</assert>
         </rule>
     </pattern>
     <pattern id="METS_administrative_metadata_premis_element_rightsmd_validation">
         <title>Validate METS administrative element rightsmd</title>
-        <rule id="CSIP45-amdSec-rightsmd-validation" context="mets:amdSec">
+        <rule id="CSIP45" context="mets:amdSec">
             <assert test="@rightsMD">For describing an overall access status for the package a simple rights statement may be used, as well as own local rights statements in use.</assert>
         </rule>
     </pattern>

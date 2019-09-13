@@ -2,42 +2,6 @@
     <ns prefix="csip" uri="DILCIS"/>
     <ns prefix="ead" uri="urn:isbn:1-931666-22-9"/>
     <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
-    <pattern id="METS_root_element_validation">
-        <title>Validate METS root element.</title>
-        <rule id="CSIP1" context="mets:mets">
-            <assert test="name()='mets:mets'">The root level element is required in all METS documents</assert>
-        </rule>
-    </pattern>
-    <pattern id="METS_root_element_object_id_validation">
-        <title>Validate METS root element.</title>
-        <rule id="CSIP2-OBJID-validation" context="mets:mets">
-            <assert test="@OBJID">It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the CS IP requirement of being unique at least across the repository.</assert>
-        </rule>
-    </pattern>
-    <pattern id="METS_root_element_type_validation">
-        <rule id="CSIP3-TYPE-existence" context="mets:mets">
-            <assert test="@TYPE">General content type attribute does not exist.</assert>
-        </rule>
-        <rule id="CSIP4-CONTENTTYPESPECIFICATION-existence" context="mets:mets">
-            <assert test="@csip:CONTENTTYPESPECIFICATION">Content information type attribute does not exist.</assert>
-        </rule>
-    </pattern>
-    <pattern id="METS_root_element_value_validation">
-        <rule id="CSIP4-CONTENTTYPESPECIFICATION-value" context="mets:mets">
-            <assert test="(contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFERMS') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFSFSB') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD1') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD2') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARDDK') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoVectorGML') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoRasterGeotiff') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'MIXED') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'OTHER'))">Content information type attribute value is not known. Known values are: SMURFERMS, SMURFSFSB, SIARD1, SIARD2, SIARDDK, GeoVectorGML, GeoRasterGeotiff, MIXED, OTHER.</assert>
-        </rule>
-    </pattern>
-    <pattern id="METS_root_element_other_type_validation">
-        <rule id="CSIP5-CONTENTTYPESPECIFICATION-OTHER" context="mets:mets">
-            <assert test="(contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFERMS') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFSFSB') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD1') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD2') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARDDK') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoVectorGML') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoRasterGeotiff') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'MIXED') or (contains(string(@csip:CONTENTTYPESPECIFICATION), 'OTHER' and @csip:OTHERCONTENTTYPESPECIFICATION)))">If the value of a CONTENTTYPESPECIFICATION attribute is "OTHER", then the OTHERCONTENTTYPESPECIFICATION attribute must be used</assert>
-        </rule>
-    </pattern>
-    <pattern id="METS_root_element_profile_validation">
-        <rule id="CSIP6-PROFILE-url" context="mets:mets">
-            <assert test="contains(string(@PROFILE), 'http://')">The PROFILE attribute has to have as its value the URL of the used profile.</assert>
-        </rule>
-    </pattern>
-
     <pattern id="METS_descriptive_metadata_element_validation">
         <title>Validate METS header element dmdSec.</title>
         <rule id="CSIP20" context="mets:dmdSec">
