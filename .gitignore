@@ -6,3 +6,4 @@ history-eark.txt
 sw/*
 **/venv
 **/.venv
+.coverage

@@ -22,12 +22,12 @@ class Base(unittest.TestCase):
     @classmethod
     def get_test_resources_dir(cls):
         """Return the resources directory path"""
-        return os.path.join(TEST_DIR, "resources")
+        return os.path.join(TEST_DIR, "../resources")
 
     @classmethod
     def get_schematron_dir(cls):
         """Return the scematron directory path"""
-        return os.path.join(TEST_DIR, "..", "schematron")
+        return os.path.join(TEST_DIR, "../..", "schematron")
 
     @classmethod
     def make_schematron_path(cls, name):

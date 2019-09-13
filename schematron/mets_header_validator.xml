@@ -4,98 +4,98 @@
     <ns prefix="mets" uri="http://www.loc.gov/METS/"/>
     <pattern id="METS_root_element_validation">
         <title>Validate METS root element.</title>
-        <rule id="CSIP1-Root-element-validation" context="mets:mets">
+        <rule id="CSIP1" context="mets:mets">
             <assert test="name()='mets:mets'">The root level element is required in all METS documents</assert>
         </rule>
     </pattern>
     <pattern id="METS_root_element_object_id_validation">
         <title>Validate METS root element.</title>
-        <rule id="CSIP2-OBJID-validation" context="mets:mets">
+        <rule id="CSIP2" context="mets:mets">
             <assert test="@OBJID">It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the CS IP requirement of being unique at least across the repository.</assert>
         </rule>
     </pattern>
     <pattern id="METS_root_element_type_validation">
-        <rule id="CSIP3-TYPE-existence" context="mets:mets">
+        <rule id="CSIP3" context="mets:mets">
             <assert test="@TYPE">General content type attribute does not exist.</assert>
         </rule>
-        <rule id="CSIP4-CONTENTTYPESPECIFICATION-existence" context="mets:mets">
+        <rule id="CSIP4.1" context="mets:mets">
             <assert test="@csip:CONTENTTYPESPECIFICATION">Content information type attribute does not exist.</assert>
         </rule>
     </pattern>
     <pattern id="METS_root_element_value_validation">
-        <rule id="CSIP4-CONTENTTYPESPECIFICATION-value" context="mets:mets">
+        <rule id="CSIP4.2" context="mets:mets">
             <assert test="(contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFERMS') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFSFSB') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD1') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD2') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARDDK') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoVectorGML') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoRasterGeotiff') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'MIXED') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'OTHER'))">Content information type attribute value is not known. Known values are: SMURFERMS, SMURFSFSB, SIARD1, SIARD2, SIARDDK, GeoVectorGML, GeoRasterGeotiff, MIXED, OTHER.</assert>
         </rule>
     </pattern>
     <pattern id="METS_root_element_other_type_validation">
-        <rule id="CSIP5-CONTENTTYPESPECIFICATION-OTHER" context="mets:mets">
+        <rule id="CSIP5" context="mets:mets">
             <assert test="(contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFERMS') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SMURFSFSB') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD1') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARD2') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'SIARDDK') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoVectorGML') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'GeoRasterGeotiff') or contains(string(@csip:CONTENTTYPESPECIFICATION), 'MIXED') or (contains(string(@csip:CONTENTTYPESPECIFICATION), 'OTHER' and @csip:OTHERCONTENTTYPESPECIFICATION)))">If the value of a CONTENTTYPESPECIFICATION attribute is "OTHER", then the OTHERCONTENTTYPESPECIFICATION attribute must be used</assert>
         </rule>
     </pattern>
     <pattern id="METS_root_element_profile_validation">
-        <rule id="CSIP6-PROFILE-url" context="mets:mets">
+        <rule id="CSIP6" context="mets:mets">
             <assert test="contains(string(@PROFILE), 'http://')">The PROFILE attribute has to have as its value the URL of the used profile.</assert>
         </rule>
     </pattern>
 
     <pattern id="METS_header_element_validation">
         <title>Validate METS header element metsHdr.</title>
-        <rule id="CSIP7-metsHdr-validation" context="mets:metsHdr">
+        <rule id="CSIP7" context="mets:metsHdr">
             <assert test="name()='mets:metsHdr'">Element for describing the package itself.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_package_creation_date_validation">
-        <rule id="CSIP9-CREATEDATE-existence" context="mets:metsHdr">
+        <rule id="CSIP9" context="mets:metsHdr">
             <assert test="@CREATEDATE">Mandatory, the date of creation of the package.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_package_last_modification_date_validation">
-        <rule id="CSIP10-LASTMODDATE-existence" context="mets:metsHdr">
+        <rule id="CSIP10" context="mets:metsHdr">
             <assert test="@LASTMODDATE">Mandatory if relevant (in case the package has been modified).</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_csip_type_validation">
-        <rule id="CSIP11-OAISPACKAGETYPE-existence" context="mets:metsHdr">
+        <rule id="CSIP11.1" context="mets:metsHdr">
             <assert test="@csip:OAISPACKAGETYPE">An attribute added by the CS IP for describing the type of the IP.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_csip_type_value_validation">
-        <rule id="CSIP11-OAISPACKAGETYPE" context="mets:metsHdr">
+        <rule id="CSIP11.2" context="mets:metsHdr">
             <assert test="(contains(string(@csip:OAISPACKAGETYPE), 'SIP') or contains(string(@csip:OAISPACKAGETYPE), 'AIP') or contains(string(@csip:OAISPACKAGETYPE), 'DIP') or contains(string(@csip:OAISPACKAGETYPE), 'AIU') or contains(string(@csip:OAISPACKAGETYPE), 'AIC'))">An attribute added by the CS IP for describing the type of the IP. The vocabulary to be used contains values: SIP, AIP, DIP, AIU, AIC. The vocabulary is managed by the DILCIS Board and will be updated when required.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_agent_validation">
-        <rule id="CSIP12-agent-existence" context="mets:agent">
+        <rule id="CSIP12" context="mets:agent">
             <assert test="name()='mets:agent'">The metsHdr must include at least one agent describing the software which has been used to create the package (ROLE=”CREATOR” TYPE=”OTHER” OTHERTYPE=”SOFTWARE”). The use of this element for describing additional agents is optional and nor restricted or recommended by this specification.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_agent_role_validation">
-        <rule id="CSIP13-agent-role-existence" context="mets:agent">
+        <rule id="CSIP13" context="mets:agent">
             <assert test="(@ROLE and contains(string(@ROLE), 'CREATOR'))">The role of the agent. The CS IP requires describing at least one agent with the agent/@ROLE value “CREATOR”. For other (optional) occurrences of agent this attribute shall use a value from the fixed list provided by METS.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_agent_type_value_validation">
-        <rule id="CSIP15-TYPE-value" context="mets:agent">
+        <rule id="CSIP15" context="mets:agent">
             <assert test="@TYPE and (contains(string(@TYPE), 'INDIVIDUAL') or contains(string(@TYPE), 'ORGANISATION') or contains(string(@TYPE), 'OTHER'))">The CS IP requires that at least one instance of the agent element includes the agent/@TYPE attribute with the value “OTHER”. In other occurrences of the agent element the attribute is optional. If used, values defined in official METS documentation shall be followed (“individual”, “organisation”, “other”).</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_agent_other_type_validation">
-        <rule id="CSIP16-OTHERTYPE" context="mets:agent">
+        <rule id="CSIP16" context="mets:agent">
             <assert test="@TYPE and @OTHERTYPE and (contains(string(@TYPE), 'OTHER') and contains(string(@OTHERTYPE), 'SOFTWARE'))">The CS IP requires that at least one instance of the agent element includes the agent/@OTHERTYPE attribute with the value “SOFTWARE”. In other occurrences this attribute shall only be used in case the value of agent/@TYPE is “OTHER”.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_agent_name_validation">
-        <rule id="CSIP17-agent-name-existence" context="mets:name">
+        <rule id="CSIP17" context="mets:name">
             <assert test="contains(string(@OTHERTYPE), 'SOFTWARE') and name()='mets:name'">The name of the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE” this element must provide the name of the software tool which was used to create the IP.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_agent_note_validation">
-        <rule id="CSIP18-agent-note-validation" context="mets:note">
+        <rule id="CSIP18" context="mets:note">
             <assert test="contains(string(@OTHERTYPE), 'SOFTWARE') and name()='mets:note'">Additional information about the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE” this element MUST provide the version information for the tool which was used to create the IP.</assert>
         </rule>
     </pattern>
     <pattern id="METS_header_element_agent_note_type_validation">
-        <rule id="CSIP19-agent-note-type-validation" context="mets:note">
+        <rule id="CSIP19" context="mets:note">
             <assert test="contains(string(@OTHERTYPE), 'SOFTWARE') and (@csip:TYPE and contains(string(@csip:TYPE), 'SOFTWARE VERSION'))">Type attribute for the note element. If the value of the @OTHERTYPE attribute is “SOFTWARE” this attribute must be used with the fixed value “SOFTWARE VERSION”</assert>
         </rule>
     </pattern>
