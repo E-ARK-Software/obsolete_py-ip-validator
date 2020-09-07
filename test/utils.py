@@ -36,19 +36,29 @@ class Utils:
     @classmethod
     def valid_mets(cls):
         """ Generator that iterates valid METS files."""
-        return cls.mets_type('valid')
+        return cls.mets_type('.valid')
 
     @classmethod
     def invalid_mets(cls):
         """ Generator that iterates invalid METS files."""
-        return cls.mets_type('invalid')
+        return cls.mets_type('.invalid')
 
     @classmethod
     def mets_type(cls, mets_type):
         """ Generator that iterates a type of METS file."""
         return _list_files_in_dir(os.path.join(cls.get_resource_path(), 'mets', mets_type))
 
+    @classmethod
+    def discrete(cls):
+        """ Generator that iterates a type of METS file."""
+        return _list_files_in_dir(os.path.join(cls.get_resource_path(), "mets", 'discrete'))
+
 def _list_files_in_dir(directory):
     for root, _, files in os.walk(directory):
         for file in files:
             yield os.path.join(root, file)
+
+def _print_reports(reports):
+    for report in reports:
+        print(report)
+        print(reports[report])

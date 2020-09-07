@@ -12,7 +12,7 @@
     </pattern>
     <pattern id="METS_root_element_object_id_validation">
         <title>Validate METS root element.</title>
-        <rule id="CSIP2" context="mets:mets">
+        <rule id="CSIP2" context="/mets:mets">
             <assert test="@OBJID">It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the CS IP requirement of being unique at least across the repository.</assert>
         </rule>
     </pattern>

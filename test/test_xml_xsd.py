@@ -6,11 +6,12 @@ import unittest
 from lxml import etree
 
 from earkips.xml.xsd import MetsValidator
-from earkips.xml.schematron import SchmematronValidator, IpSchematronValidator, _schematron_file
+from earkips.xml.schematron import IpSchematronValidator
 
-from .utils import Utils
+from .utils import Utils, _print_reports
+from .base import BaseValidatorTest
 
-class XMLSchemaTests(unittest.TestCase):
+class XMLSchemaTests(BaseValidatorTest):
     """ Unit tests for schema validation. """
     validator = MetsValidator()
 
@@ -23,8 +24,8 @@ class XMLSchemaTests(unittest.TestCase):
     def test_valid_mets(self):
         """ Test validation of valid file."""
         for valid_mets in Utils.valid_mets():
-            is_valid, _ = XMLSchemaTests.validator.is_valid(valid_mets)
-            self.assertTrue(is_valid)
+            is_valid, message = XMLSchemaTests.validator.is_valid(valid_mets)
+            self.assertTrue(is_valid, valid_mets + "\n" + message)
 
     def test_no_file(self):
         """ Test validation of no file."""
@@ -62,16 +63,7 @@ class XMLSchemaTests(unittest.TestCase):
         """Test mets file validation."""
         self._test_schema_validator("structmap")
 
-    def _test_schema_validator(self, name):
-        for file in Utils.mets_type(name):
-            print(file)
-            result, message = self.validator.is_valid(file)
-            if ".invalid" in file:
-                self.assertFalse(result, file)
-            else:
-                self.assertTrue(result, file + ":\n" + str(message))
-
-class XMLSchematronTests(unittest.TestCase):
+class XMLSchematronTests(BaseValidatorTest):
     """Test cases for low level schematron validator"""
     def test_root(self):
         """Test mets root validation."""
@@ -97,19 +89,7 @@ class XMLSchematronTests(unittest.TestCase):
         """Test mets file validation."""
         self._test_schematron_validator("structmap")
 
-    def _test_schematron_validator(self, name):
-        validator = SchmematronValidator(_schematron_file(name))
-        for file in Utils.mets_type(name):
-            print(file)
-            result, report = validator.is_valid(file)
-            if ".sidelined" in str(file):
-                pass
-            elif ".valid" in str(file):
-                self.assertTrue(result, file + ":\n" + str(report))
-            else:
-                self.assertFalse(result, file + ":\n" + str(report))
-
-class IpSchematronValidatorTests(unittest.TestCase):
+class IpSchematronValidatorTests(BaseValidatorTest):
     """Test cases for schematron validator"""
     def test_root(self):
         """Test mets root validation."""
@@ -142,15 +122,15 @@ class IpSchematronValidatorTests(unittest.TestCase):
             print(file)
             try:
                 result, reports = validator.validate(file)
-                if not result:
-                    for report in reports:
-                        print(report)
-                        print(str(reports[report]))
                 if ".sidelined" in str(file):
                     pass
                 elif ".valid" in str(file):
+                    if not result:
+                        _print_reports(reports)
                     self.assertTrue(result, file + ":\n" + str(reports))
                 else:
+                    if result:
+                        _print_reports(reports)
                     self.assertFalse(result, file)
             except etree.XSLTApplyError as excep:
                 print(str(excep))

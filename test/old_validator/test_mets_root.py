@@ -11,8 +11,8 @@ class MetsRootTestCase(Base):
     def test_file_rules(self):
         """Test for file schematron rules."""
         for file in Utils.mets_type("root"):
-            result, report = validate(self.rules, file)
             print(file)
+            result, report = validate(self.rules, file)
             if ".sidelined" in file:
                 pass
             elif ".valid" in file:
