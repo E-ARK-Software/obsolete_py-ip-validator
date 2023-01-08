@@ -17,7 +17,7 @@ setup(
     packages=['mets-validator'],
     include_package_data=True,
     install_requires=[
-        'lxml==3.7.3'
+        'lxml==4.9.1'
     ],
 )
 
